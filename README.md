@@ -99,23 +99,25 @@ Se integraron 4 datasets con información de:
 
 ## 📁 Estructura del Repositorio
 
+```plaintext
 Proyecto_Churn/
 ├── data/
-│ ├── raw_data/ # Datos originales
-│ │ ├── contract.csv
-│ │ ├── internet.csv
-│ │ ├── personal.csv
-│ │ └── phone.csv
-│ └── inter/ # Datos intermedios
-│ └── df/
-├── modelo/ # Modelos entrenados
-│ └── modelo_churn.pkl
+│   ├── raw_data/            # Datos originales sin procesar
+│   │   ├── contract.csv
+│   │   ├── internet.csv
+│   │   ├── personal.csv
+│   │   └── phone.csv
+│   └── inter/               # Datos intermedios transformados 
+│       └── df/
+├── modelo/                  # Modelos entrenados
+│   └── modelo_churn.pkl
 ├── notebooks/
-│ └── Proyecto_Churn.ipynb
-├── scripts/ # Scripts Python modulares
+│   └── Proyecto_Churn.ipynb
+├── scripts/                 # Scripts Python modulares
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
 ---
 
