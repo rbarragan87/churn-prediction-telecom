@@ -1,207 +1,126 @@
-    "# 📉 Predicción de Churn en una Empresa de Telecomunicaciones\n",
-    "**`Ciencia de Datos`** · **`Machine Learning`** · **`Análisis de Negocio`**  \n",
-    "\n",
-    "## 🚀 Introducción  \n",
-    "El **churn** (abandono de clientes) representa una pérdida directa y significativa para las empresas de telecomunicaciones: **más de €1.6 millones anuales** en ingresos perdidos solo por clientes que dejan el servicio. Por ello, este proyecto desarrolla un modelo predictivo que permita identificar anticipadamente a los clientes con mayor riesgo de abandono, facilitando acciones de retención que protejan los ingresos y mejoren la rentabilidad.\n",
-    "\n",
-    "La capacidad de anticipar el churn no solo reduce pérdidas económicas, sino que también mejora la fidelización y optimiza recursos de marketing, transformando datos en ventajas competitivas.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 📋 Resumen Ejecutivo  \n",
-    "- Impacto económico estimado por churn: **€1.6 millones anuales**.  \n",
-    "- Modelos entrenados: Regresión Logística, Random Forest, XGBoost.  \n",
-    "- Métrica clave priorizada: **Recall = 0.68**, para maximizar la detección de clientes en riesgo.  \n",
-    "- Insights de negocio: clientes adultos mayores, sin pareja ni dependientes, y métodos de pago como cheque electrónico presentan mayor riesgo de abandono.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🎯 Objetivos del Proyecto  \n",
-    "- Identificar factores clave que influyen en el abandono de clientes.  \n",
-    "- Cuantificar el impacto económico del churn.  \n",
-    "- Construir un modelo predictivo confiable para anticipar clientes en riesgo.  \n",
-    "- Generar insights accionables para áreas de negocio, especialmente marketing y retención.  \n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🛠️ Herramientas y Tecnologías  \n",
-    "- **Lenguaje de programación:** Python  \n",
-    "- **Manipulación y análisis de datos:** pandas, numpy  \n",
-    "- **Modelado y machine learning:** scikit-learn, xgboost, imbalanced-learn (SMOTE), boruta  \n",
-    "- **Visualización:** matplotlib, seaborn  \n",
-    "- **Entorno de desarrollo:** Jupyter Notebook  \n",
-    "- **Control de versiones:** Git y GitHub  \n",
-    "- **Otros:** GridSearchCV para optimización de hiperparámetros, técnicas de balanceo de clases  \n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 📋 Plan de Trabajo\n",
-    "\n",
-    "1. **Importar librerías y datos:**  \n",
-    "   Carga de librerías y lectura de 4 datasets desde la carpeta `Datasets/`.\n",
-    "\n",
-    "2. **Análisis inicial y limpieza de datos:**  \n",
-    "   Exploración de estructuras, manejo de nulos y duplicados, y unión de datasets usando `df_contract` como base.\n",
-    "\n",
-    "3. **Análisis Exploratorio de Datos (EDA):**  \n",
-    "   Estudio de distribución de variables, detección de outliers, análisis de correlaciones y balance de clases.\n",
-    "\n",
-    "4. **Análisis financiero del churn y preguntas de negocio:**  \n",
-    "   Cuantificación de pérdidas y análisis de segmentos clave.\n",
-    "\n",
-    "5. **Selección de características:**  \n",
-    "   Uso de Random Forest y BorutaPy para identificar variables relevantes y eliminar las irrelevantes.\n",
-    "\n",
-    "6. **División de datos y preprocesamiento:**  \n",
-    "   Codificación One-Hot, estandarización, división en train/test y balanceo con SMOTE.\n",
-    "\n",
-    "7. **Modelado:**  \n",
-    "   Entrenamiento y comparación de modelos (Regresión Logística, Random Forest, XGBoost) con optimización de hiperparámetros.\n",
-    "\n",
-    "8. **Evaluación y selección del modelo final:**  \n",
-    "   Análisis con métricas (accuracy, precision, recall, F1, ROC AUC) y selección basada en recall.\n",
-    "\n",
-    "9. **Generación de insights y conclusiones:**  \n",
-    "   Traducción de resultados en recomendaciones prácticas para el negocio.\n",
-    "\n",
-    "10. **Informe de solución**\n",
-    "\n",
-    "*El detalle completo está disponible en el notebook.*\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 📊 Enfoque y Metodología  \n",
-    "Este proyecto fue desarrollado con un enfoque centrado en el negocio, buscando no solo construir un modelo técnicamente sólido, sino también responder preguntas que aporten directamente a la toma de decisiones estratégicas.\n",
-    "\n",
-    "Se abordaron interrogantes clave para la empresa, tales como:  \n",
-    "- ¿Quiénes son los clientes con mayor probabilidad de abandono?  \n",
-    "- ¿Qué segmentos o métodos de pago implican mayor riesgo?  \n",
-    "- ¿Cuál es el impacto económico mensual y anual del churn?  \n",
-    "- ¿Cómo priorizar acciones comerciales y de retención para maximizar el retorno?\n",
-    "\n",
-    "El análisis no se limitó a la precisión del modelo, sino que buscó traducir los resultados en insights prácticos que permitan orientar campañas, políticas de precios y estrategias de fidelización con base en datos reales.\n",
-    "\n",
-    "Desde el punto de vista técnico, se aplicó:  \n",
-    "- Limpieza rigurosa y preparación de datos.  \n",
-    "- Técnicas de selección de características robustas (Random Forest, BorutaPy).  \n",
-    "- Balanceo de clases para mejorar detección de casos minoritarios.  \n",
-    "- Modelado con algoritmos avanzados (Regresión Logística, Random Forest, XGBoost).  \n",
-    "- Validación cruzada y optimización para asegurar generalización.  \n",
-    "- Métricas enfocadas en negocio, priorizando el recall para minimizar falsos negativos.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🧩 Datos Utilizados  \n",
-    "Se integraron 4 datasets con información de:  \n",
-    "- Contratos y clientes  \n",
-    "- Servicios contratados  \n",
-    "- Historial y métodos de pago  \n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 📈 Resultados Clave\n",
-    "\n",
-    "| Indicador              | Resultado         |\n",
-    "|-----------------------|-------------------|\n",
-    "| Tasa de churn          | 27%               |\n",
-    "| Pérdida mensual estimada | €139,130.85       |\n",
-    "| Pérdida anual proyectada | €1,669,570     |\n",
-    "| Modelo final           | Regresión Logística|\n",
-    "| Recall                 | 0.69              |\n",
-    "| F1 Score               | 0.65              |\n",
-    "| ROC AUC                | 0.76              |\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🧠 Insights Destacados\n",
-    "\n",
-    "1. **Perfil de riesgo:** Adultos mayores sin pareja ni dependientes tienen mayor propensión al churn.  \n",
-    "2. **Métodos de pago:** *Electronic check* se asocia con tasas de abandono significativamente más altas.  \n",
-    "3. **Tenencia:** Clientes con menor tiempo con la empresa (tenure bajo) tienden a abandonar más.  \n",
-    "4. **Carga mensual:** Cargos altos sin servicios adicionales se relacionan con mayor churn.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 💼 Recomendaciones de Negocio\n",
-    "\n",
-    "- Diseñar campañas de retención específicas para **nuevos clientes**.  \n",
-    "- Incentivar **métodos de pago automáticos** como transferencia bancaria o tarjeta.  \n",
-    "- Ofrecer beneficios especiales a **adultos mayores**.  \n",
-    "- Reevaluar políticas de precios y estrategias de valor percibido en los primeros meses.\n",
-    "\n"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "9fbeee14-7997-4294-98fb-ab9bc8f40458",
-   "metadata": {},
-   "source": [
-    "---\n",
-    "\n",
-    "## 📁 Estructura del Repositorio  "
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "e8a058f3-dd42-4691-b844-68f077263029",
-   "metadata": {},
-   "source": [
-    "```tree\n",
-    "Proyecto_Churn/\n",
-    "├── data/\n",
-    "│   ├── raw_data/            # Datos originales sin procesar\n",
-    "│   │   ├── contract.csv\n",
-    "│   │   ├── internet.csv\n",
-    "│   │   ├── personal.csv\n",
-    "│   │   └── phone.csv\n",
-    "│   └── inter/               # Datos intermedios transformados \n",
-    "│       └── df/              # Generado en el notebook\n",
-    "├── modelo/                  # Modelos entrenados\n",
-    "│   └── modelo_churn.pkl     # Modelo serializado\n",
-    "├── notebooks/\n",
-    "│   └── Proyecto_Churn.ipynb\n",
-    "├── scripts/                 # Scripts Python reutilizables\n",
-    "├── README.md                # Documentación\n",
-    "├── requirements.txt         # Dependencias\n",
-    "└── .gitignore               # No necesite excluir nada\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "51662080-8d98-43aa-bd84-c0649804ad3a",
-   "metadata": {},
-   "source": [
-    "---\r\n",
-    "\r\n",
-    "## 📬 Contacto\r\n",
-    "\r\n",
-    "- 📧 [rbarraganaguilera@gmail.com](mailto:rbarraganaguilera@gmail.com)  \r\n",
-    "- 📞 [+52 443 942 3290](tel:+524439423290)  \r\n",
-    "- 💼 [LinkedIn - Roberto Octavio Barragán Aguilera](https://www.linkedin.com/in/roberto-octavio-barragan-aguira/)\r\n",
-    "ragan)\r\n"
-   ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.12.4"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+# 📉 Predicción de Churn en una Empresa de Telecomunicaciones
+**`Ciencia de Datos`** · **`Machine Learning`** · **`Análisis de Negocio`**
+
+---
+
+## 🚀 Introducción
+
+El **churn** (abandono de clientes) representa una pérdida directa y significativa para las empresas de telecomunicaciones: **más de €1.6 millones anuales** en ingresos perdidos solo por clientes que dejan el servicio.  
+Este proyecto desarrolla un modelo predictivo que permite identificar anticipadamente a los clientes con mayor riesgo de abandono, facilitando acciones de retención que protejan los ingresos y mejoren la rentabilidad.
+
+---
+
+## 📋 Resumen Ejecutivo
+
+- Impacto económico estimado por churn: **€1.6 millones anuales**  
+- Modelos entrenados: Regresión Logística, Random Forest, XGBoost  
+- Métrica clave priorizada: **Recall = 0.68**, para maximizar la detección de clientes en riesgo  
+- Insights de negocio: adultos mayores, sin pareja ni dependientes, y quienes usan cheque electrónico, presentan mayor riesgo
+
+---
+
+## 🎯 Objetivos del Proyecto
+
+- Identificar factores clave que influyen en el abandono
+- Cuantificar el impacto económico del churn
+- Construir un modelo predictivo confiable
+- Generar insights accionables para áreas de negocio
+
+---
+
+## 🛠️ Herramientas y Tecnologías
+
+- **Lenguaje:** Python  
+- **Análisis de datos:** pandas, numpy  
+- **Modelado:** scikit-learn, xgboost, imbalanced-learn (SMOTE), Boruta  
+- **Visualización:** matplotlib, seaborn  
+- **Entorno:** Jupyter Notebook  
+- **Control de versiones:** Git y GitHub  
+- **Otros:** GridSearchCV, balanceo de clases
+
+---
+
+## 📋 Plan de Trabajo
+
+1. Importación de librerías y datos
+2. Análisis inicial y limpieza
+3. EDA (Análisis exploratorio)
+4. Análisis financiero del churn
+5. Selección de variables con Random Forest y Boruta
+6. Preprocesamiento: One-Hot, estandarización, SMOTE
+7. Modelado: logística, Random Forest, XGBoost
+8. Evaluación y selección final (recall prioritario)
+9. Insights para negocio
+10. Informe de solución en el notebook
+
+---
+
+## 🧩 Datos Utilizados
+
+Se integraron 4 datasets con información de:
+
+- Contratos y clientes
+- Servicios contratados
+- Historial de pagos y métodos
+
+---
+
+## 📈 Resultados Clave
+
+| Indicador                | Resultado         |
+|-------------------------|-------------------|
+| Tasa de churn           | 27%               |
+| Pérdida mensual         | €139,130.85       |
+| Pérdida anual proyectada| €1,669,570        |
+| Modelo final            | Regresión Logística |
+| Recall                  | 0.69              |
+| F1 Score                | 0.65              |
+| ROC AUC                 | 0.76              |
+
+---
+
+## 🧠 Insights Destacados
+
+1. Adultos mayores sin pareja ni dependientes = mayor riesgo  
+2. *Electronic check* se asocia con más abandonos  
+3. Clientes con poca antigüedad tienen más churn  
+4. Cargos altos sin beneficios adicionales = más riesgo
+
+---
+
+## 💼 Recomendaciones de Negocio
+
+- Campañas para nuevos clientes
+- Incentivar pagos automáticos
+- Beneficios para adultos mayores
+- Revisar políticas de precios iniciales
+
+---
+
+## 📁 Estructura del Repositorio
+
+Proyecto_Churn/
+├── data/
+│ ├── raw_data/ # Datos originales
+│ │ ├── contract.csv
+│ │ ├── internet.csv
+│ │ ├── personal.csv
+│ │ └── phone.csv
+│ └── inter/ # Datos intermedios
+│ └── df/
+├── modelo/ # Modelos entrenados
+│ └── modelo_churn.pkl
+├── notebooks/
+│ └── Proyecto_Churn.ipynb
+├── scripts/ # Scripts Python modulares
+├── README.md
+├── requirements.txt
+└── .gitignore
+
+---
+
+## 📬 Contacto
+
+- 📧 [rbarraganaguilera@gmail.com](mailto:rbarraganaguilera@gmail.com)  
+- 📞 [+52 443 942 3290](tel:+524439423290)  
+- 💼 [LinkedIn - Roberto Octavio Barragán Aguilera](https://www.linkedin.com/in/roberto-octavio-barragan-aguilera/)
