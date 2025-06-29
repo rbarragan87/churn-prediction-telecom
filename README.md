@@ -1,10 +1,3 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "id": "2ec2fcad-cf8d-4ca9-b6ac-650020feead8",
-   "metadata": {},
-   "source": [
     "# 📉 Predicción de Churn en una Empresa de Telecomunicaciones\n",
     "**`Ciencia de Datos`** · **`Machine Learning`** · **`Análisis de Negocio`**  \n",
     "\n",
