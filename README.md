@@ -5,7 +5,7 @@
 
 ## 🚀 Introducción
 
-El **churn** (abandono de clientes) representa una pérdida directa y significativa para las empresas de telecomunicaciones: **más de €1.6 millones anuales** en ingresos perdidos solo por clientes que dejan el servicio.  
+El **churn** (abandono de clientes) representa una pérdida directa y significativa para las empresas de telecomunicaciones: **más de €1.6 millones anuales** en ingresos perdidos solo por clientes que dejan el servicio (en el caso particular de esta empresa).  
 Este proyecto desarrolla un modelo predictivo que permite identificar anticipadamente a los clientes con mayor riesgo de abandono, facilitando acciones de retención que protejan los ingresos y mejoren la rentabilidad.
 
 ---
